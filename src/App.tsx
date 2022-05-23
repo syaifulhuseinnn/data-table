@@ -85,7 +85,14 @@ export const App = () => {
     ) {
       dispatch(fetchUsersByGender({ page: initialPage + 1, gender: gender }));
     }
-  }, [gender, dispatch, initialPage]);
+
+    if (
+      (keyword && usersMale.length > 0) ||
+      (keyword && usersFemale.length > 0)
+    ) {
+      dispatch(searchUserByKeyword({ keyword, gender }));
+    }
+  }, [gender, dispatch, initialPage, usersMale, usersFemale]);
 
   /**
    * It will call the male USER_API if user click page 2 with filter MALE GENDER
