@@ -74,7 +74,7 @@ function Header({
             />
             <Input
               type="text"
-              placeholder="Search..."
+              placeholder="Search username.."
               onChange={handleKeywordChange}
               ref={searchInputRef}
             />
