@@ -42,7 +42,7 @@ export const userSlice = createSlice({
           filterFromUsers = [
             ...filterFromUsers,
             ...u.results.filter((user) =>
-              user.login.username.startsWith(keyword)
+              user.login.username.startsWith(keyword.toLowerCase())
             ),
           ];
         }
@@ -53,7 +53,7 @@ export const userSlice = createSlice({
           filterFromUsersMale = [
             ...filterFromUsersMale,
             ...u.results.filter((user) =>
-              user.login.username.startsWith(keyword)
+              user.login.username.startsWith(keyword.toLowerCase())
             ),
           ];
         }
@@ -64,7 +64,7 @@ export const userSlice = createSlice({
           filterFromUsersFemale = [
             ...filterFromUsersFemale,
             ...u.results.filter((user) =>
-              user.login.username.startsWith(keyword)
+              user.login.username.startsWith(keyword.toLowerCase())
             ),
           ];
         }
