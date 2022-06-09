@@ -148,7 +148,6 @@ export const App = () => {
         )
         ?.results.map((user, index) => (
           <Tr key={user.login.uuid}>
-            <Td>{index + 1}</Td>
             <Td>{user.login.username}</Td>
             <Td>{Object.values(user.name).join(" ")}</Td>
             <Td>{user.email}</Td>
@@ -165,7 +164,6 @@ export const App = () => {
         )
         ?.results.map((user, index) => (
           <Tr key={user.login.uuid}>
-            <Td>{index + 1}</Td>
             <Td>{user.login.username}</Td>
             <Td>{Object.values(user.name).join(" ")}</Td>
             <Td>{user.email}</Td>
@@ -176,7 +174,6 @@ export const App = () => {
     } else if (keyword) {
       usersComponent = usersSearchResult.map((user, index) => (
         <Tr key={user.login.uuid}>
-          <Td>{index + 1}</Td>
           <Td>{user.login.username}</Td>
           <Td>{Object.values(user.name).join(" ")}</Td>
           <Td>{user.email}</Td>
@@ -193,7 +190,6 @@ export const App = () => {
         )
         ?.results.map((user, index) => (
           <Tr key={user.login.uuid}>
-            <Td>{index + 1}</Td>
             <Td>{user.login.username}</Td>
             <Td>{Object.values(user.name).join(" ")}</Td>
             <Td>{user.email}</Td>
@@ -209,7 +205,6 @@ export const App = () => {
           <TableCaption>User List</TableCaption>
           <Thead>
             <Tr>
-              <Th>No.</Th>
               <Th>Username</Th>
               <Th>Name</Th>
               <Th>Email</Th>
@@ -220,7 +215,6 @@ export const App = () => {
           <Tbody>{usersComponent}</Tbody>
           <Tfoot>
             <Tr>
-              <Th>No.</Th>
               <Th>Username</Th>
               <Th>Name</Th>
               <Th>Email</Th>
@@ -260,10 +254,6 @@ export const App = () => {
             containerClassName="pagination"
             activeClassName="active"
             forcePage={initialPage === 0 ? initialPage : initialPage - 1}
-            // onClick={(e) => {
-            //   setInitialPage(e.nextSelectedPage! + 1);
-            //   handlePageChange();
-            // }}
             onPageChange={(e) => {
               setInitialPage(e.selected + 1);
               console.log(e.selected + 1);
